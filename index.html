@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Meal-Prep Plan – 2 Koch-Tage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{--bg:#f5f7fa;--card:#fff;--accent:#0077ff;--text:#222;--sub:#555;--border:#e0e6ed}
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;padding:1rem}
+    h1,h2{margin:.5rem 0}h1{font-size:1.6rem;text-align:center}h2{font-size:1.25rem;color:var(--accent)}
+    .card{background:var(--card);border-radius:12px;padding:.75rem 1rem;margin-bottom:.75rem;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    .ex-row{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
+    .ex-row:last-child{border-bottom:none}
+    .main{font-weight:600}.alt{font-size:.8rem;color:var(--sub);margin-top:.15rem}
+    a{color:var(--accent);text-decoration:none}.sets{font-size:.9rem;white-space:nowrap;margin-left:.5rem}
+    .note{text-align:center;font-size:.85rem;color:var(--sub);margin:-.5rem 0 1rem}
+    .done{text-decoration:line-through;opacity:.55}
+    /* Einkaufs- & Prep-Bereiche */
+    .shop-section{margin-bottom:1rem}
+    .shop-header{cursor:pointer;background:var(--accent);color:#fff;padding:.5rem .75rem;border-radius:8px;font-weight:600}
+    .shop-content{display:none;padding:.5rem 0}
+    .shop-content.show{display:block}
+    .shop-item{display:flex;align-items:center;padding:.3rem 0}
+    .shop-item input{margin-right:.5rem}
+  </style>
+</head>
+
+<body>
+
+<h1>Meal-Prep Plan – 2 Koch-Tage</h1>
+<p class="note">Koch-Schritte abhaken – alles wird in Boxen für 6 Tage (+2 Portionen Frau) vorbereitet.</p>
+
+<!-- ================= SONNTAG ================= -->
+<h2>Sonntag – Koch-Session 1 (90 min, 6 Portionen Mo–Do)</h2>
+
+<!-- Reis-Bowl -->
+<div class="card">
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Reis kochen (250 g trocken) – 12 min</div><div class="alt">→ 1.500 g gekocht (6 Portionen)</div></div><div class="sets">Schritt 1</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">TK-Brokkoli & Mais dünsten – 4 min</div><div class="alt">→ 400 g Brokkoli, 400 g Mais</div></div><div class="sets">Schritt 2</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Hähnchen würfeln, marinieren, anbraten – 12 min</div><div class="alt">→ 300 g nur für diese Woche!</div></div><div class="sets">Schritt 3</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Kichererbsen + Gemüse in Pfanne, würzen – 3 min</div><div class="alt">→ 1 Dose Kichererbsen (265 g)</div></div><div class="sets">Schritt 4</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Boxen füllen: Reis + Hähnchen-Gemüse-Mix</div><div class="alt">→ 2 Boxen für dich (Mo+Di Mittag), 4 Boxen Frau/Reserve</div></div><div class="sets">Fertig</div></div>
+</div>
+
+<!-- One-Pot Beluga -->
+<div class="card">
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Beluga-Linsen kochen – 15 min (150 g trocken)</div><div class="alt">→ 450 g gekocht (6 Portionen)</div></div><div class="sets">Schritt 1</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Eier hartkochen – 10 min (6 Eier: 2 ganze + 4 Eiweiß)</div><div class="alt">→ später in Pfanne</div></div><div class="sets">Schritt 2</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Nudeln + Linsen + Tomaten + Gemüse in einen Topf – 12 min</div><div class="alt">→ 250 g Nudeln, 400 ml passierte Tomaten, 200 g TK-Gemüse</div></div><div class="sets">Schritt 3</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Eier würfeln, unterheben, Öl + Gewürze – 2 min</div><div class="alt">→ 1 EL Olivenöl + Oregano</div></div><div class="sets">Schritt 4</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Abend-Boxen füllen → 6 Portionen (Mo–Do Abend)</div><div class="alt">→ Kühl stellen, fertig!</div></div><div class="sets">Fertig</div></div>
+</div>
+
+<!-- Overnight -->
+<div class="card">
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Over-Night-Gläser füllen (6 Stück)</div><div class="alt">→ 40 g Haferflocken, 25 g Whey, 150 ml Haferdrink, ½ Apfel, 1 TL Honig, Zimt</div></div><div class="sets">Fertig</div></div>
+</div>
+
+<!-- ================= MITTWOCH ================= -->
+<h2>Mittwoch – Koch-Session 2 (25 min, 5 Portionen Fr–So)</h2>
+
+<!-- Ei-Bohnen-Reis -->
+<div class="card">
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Reis kochen – 12 min (300 g trocken)</div><div class="alt">→ 1.800 g gekocht (5 Portionen)</div></div><div class="sets">Schritt 1</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Eier würfeln, anbraten – 5 min (8 Eier: 3 ganze + 5 Eiweiß)</div><div class="alt">→ Mehr Protein, weniger Fett</div></div><div class="sets">Schritt 2</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Kichererbsen + TK-Gemüse + Reis in Pfanne – 5 min</div><div class="alt">→ 1 Dose Kichererbsen, 200 g TK-Erbsen & Karotten</div></div><div class="sets">Schritt 3</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Gewürze + Öl + Sojasauce – 2 min</div><div class="alt">→ 1 EL Öl, Kurkuma, Salz, Pfeffer</div></div><div class="sets">Schritt 4</div></div>
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Boxen füllen → 5 Portionen (Fr–So Abend)</div><div class="alt">→ Kühl stellen, fertig!</div></div><div class="sets">Fertig</div></div>
+</div>
+
+<!-- Snack -->
+<div class="card">
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Quark-Becher zubereiten (5 Stück)</div><div class="alt">→ 200 g Magerquark + 10 g Whey + 50 g TK-Beeren + Süßstoff</div></div><div class="sets">Fertig</div></div>
+</div>
+
+<!-- Frühstück Reload -->
+<div class="card">
+  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Over-Night-Gläser neu aufsetzen (5 Stück)</div><div class="alt">→ wie Sonntag, einfach neu füllen</div></div><div class="sets">Fertig</div></div>
+</div>
+
+<!-- ================= EINKAUFSLISTE ================= -->
+<h2>Einkaufsliste (6 Tage, +2 Portionen Frau)</h2>
+<p class="note">Bereiche aufklappen → abhaken. Mengen = Gesamtbedarf.</p>
+
+<!-- Fleisch & Eier -->
+<div class="shop-section">
+  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Fleisch, Fisch, Eier</div>
+  <div class="shop-content">
+    <label class="shop-item"><input type="checkbox"> Hähnchenbrust – 400 g (nur 1× vorkochen)</label>
+    <label class="shop-item"><input type="checkbox"> Seelachs (TK) – 400 g</label>
+    <label class="shop-item"><input type="checkbox"> Eier – 14 Stück (2+4+6+2 Reserve)</label>
+  </div>
+</div>
+
+<!-- Hülsenfrüchte -->
+<div class="shop-section">
+  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Hülsenfrüchte (reduziert)</div>
+  <div class="shop-content">
+    <label class="shop-item"><input type="checkbox"> Kidney-Bohnen – 2 Dosen (à 265 g)</label>
+    <label class="shop-item"><input type="checkbox"> Weiße Bohnen – 2 Dosen (à 265 g)</label>
+    <label class="shop-item"><input type="checkbox"> Beluga-Linsen – 150 g (trocken)</label>
+    <label class="shop-item"><input type="checkbox"> Kichererbsen – 2 Dosen (à 265 g)</label>
+  </div>
+</div>
+
+<!-- Kohlenhydrate -->
+<div class="shop-section">
+  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Kohlenhydrate</div>
+  <div class="shop-content">
+    <label class="shop-item"><input type="checkbox"> Basmati-Reis – 1,1 kg (trocken)</label>
+    <label class="shop-item"><input type="checkbox"> Vollkorn-Penne – 750 g (trocken)</label>
+    <label class="shop-item"><input type="checkbox"> Haferflocken – 400 g</label>
+    <label class="shop-item"><input type="checkbox"> Süßkartoffeln – 300 g</label>
+  </div>
+</div>
+
+<!-- Gemüse & Obst -->
+<div class="shop-section">
+  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Gemüse & Obst</div>
+  <div class="shop-content">
+    <label class="shop-item"><input type="checkbox"> TK-Brokkoli – 400 g</label>
+    <label class="shop-item"><input type="checkbox"> TK-Erbsen & Karotten – 400 g</label>
+    <label class="shop-item"><input type="checkbox"> TK-Mais – 400 g</label>
+    <label class="shop-item"><input type="checkbox"> Kirschtomaten – 1,6 kg (2× 800 g Schale)</label>
+    <label class="shop-item"><input type="checkbox"> Äpfel – 3 Stück (für Overnight)</label>
+    <label class="shop-item"><input type="checkbox"> Bananen – 3 Stück (für Overnight + Snack)</label>
+    <label class="shop-item"><input type="checkbox"> TK-Beeren – 300 g (für Quark-Becher)</label>
+  </div>
+</div>
+
+<!-- Milchprodukte & Protein -->
+<div class="shop-section">
+  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Milchprodukte & Protein</div>
+  <div class="shop-content">
+    <label class="shop-item"><input type="checkbox"> Magerquark (0,2 %) – 1,8 kg (10× 200 g Becher)</label>
+    <label class="shop-item"><input type="checkbox"> Whey Protein – 200 g (≈ 10 Portionen)</label>
+    <label class="shop-item"><input type="checkbox"> Feta light (10 % Fett) – 400 g</label>
+    <label class="shop-item"><input type="checkbox"> Haferdrink (ungesüßt) – 1,5 L</label>
+  </div>
+</div>
+
+<!-- Fette & Gewürze -->
+<div class="shop-section">
+  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Fette & Gewürze</div>
+  <div class="shop-content">
+    <label class="shop-item"><input type="checkbox"> Rapsöl – 4 EL (≈ 40 ml)</label>
+    <label class="shop-item"><input type="checkbox"> Olivenöl – 3 EL (≈ 30 ml)</label>
+    <label class="shop-item"><input type="checkbox"> Gemahlene Mandeln – 30 g (Crunch)</label>
+    <label class="shop-item"><input type="checkbox"> Honig – 3 TL (15 g)</label>
+    <label class="shop-item"><input type="checkbox"> Gewürze: Paprika, Kreuzkümmel, Oregano, Salz, Pfeffer, Knoblauch, Sojasauce, Kurkuma</label>
+  </div>
+</body>
+</html>
