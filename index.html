@@ -1,151 +1,296 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Meal-Prep Plan – 2 Koch-Tage (ganze Eier, 90 % Schoko)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meal-Prep Plan — Woche 1</title>
   <style>
-    :root{--bg:#f5f7fa;--card:#fff;--accent:#0077ff;--text:#222;--sub:#555;--border:#e0e6ed}
-    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;padding:1rem}
-    h1,h2{margin:.5rem 0}h1{font-size:1.6rem;text-align:center}h2{font-size:1.25rem;color:var(--accent)}
-    .card{background:var(--card);border-radius:12px;padding:.75rem 1rem;margin-bottom:.75rem;box-shadow:0 2px 6px rgba(0,0,0,.06)}
-    .ex-row{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
-    .ex-row:last-child{border-bottom:none}
-    .main{font-weight:600}.alt{font-size:.8rem;color:var(--sub);margin-top:.15rem}
-    a{color:var(--accent);text-decoration:none}.sets{font-size:.9rem;white-space:nowrap;margin-left:.5rem}
-    .note{text-align:center;font-size:.85rem;color:var(--sub);margin:-.5rem 0 1rem}
-    .done{text-decoration:line-through;opacity:.55}
-    .shop-section{margin-bottom:1rem}
-    .shop-header{cursor:pointer;background:var(--accent);color:#fff;padding:.5rem .75rem;border-radius:8px;font-weight:600}
-    .shop-content{display:none;padding:.5rem 0}
-    .shop-content.show{display:block}
-    .shop-item{display:flex;align-items:center;padding:.3rem 0}
-    .shop-item input{margin-right:.5rem}
+    :root{--bg:#fbfcfe;--card:#ffffff;--accent:#2b6cb0;--muted:#6b7280;--success:#16a34a}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0; background:var(--bg); color:#0f172a; line-height:1.4}
+    header{background:linear-gradient(90deg,var(--accent),#3b82f6); color:#fff; padding:20px}
+    .container{max-width:980px;margin:18px auto;padding:0 16px}
+    h1{margin:0;font-size:20px}
+    .sub{opacity:.95;margin-top:6px;font-size:13px;color:rgba(255,255,255,.95)}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:18px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr} .rightcol{order:2}}
+    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(11,22,39,.06)}
+    h2{margin:0 0 8px 0;font-size:16px}
+    p.small{margin:6px 0;color:var(--muted);font-size:13px}
+    ul{padding-left:18px;margin:8px 0}
+
+    /* Shopping list */
+    .shop-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+    button.btn{background:var(--accent);color:#fff;border:0;padding:8px 12px;border-radius:8px;cursor:pointer}
+    button.ghost{background:transparent;border:1px solid #e6eefc;color:var(--accent)}
+    .shop-list{max-height:55vh;overflow:auto;padding-right:8px}
+    .shop-item{display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px}
+    label.item{flex:1;display:flex;align-items:center;gap:10px}
+    input[type=checkbox]{width:18px;height:18px}
+
+    /* Recipe list */
+    details{margin-bottom:10px}
+    summary{cursor:pointer;font-weight:600;padding:8px 6px;border-radius:8px}
+    .recipe-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}
+
+    /* footer */
+    footer{margin:28px 0 80px 0;text-align:center;color:var(--muted);font-size:13px}
+
+    /* small helpers */
+    .muted{color:var(--muted);font-size:13px}
+    .pill{display:inline-block;padding:6px 8px;border-radius:999px;background:#eef2ff;color:var(--accent);font-weight:600;font-size:12px}
+    .row{display:flex;gap:12px;align-items:center}
+    pre{white-space:pre-wrap;background:#0f172a;color:#fff;padding:10px;border-radius:8px;font-size:13px}
+
+    /* print */
+    @media print{body{background:#fff} header, .shop-actions, button{display:none}}
   </style>
 </head>
-
 <body>
+  <header>
+    <div class="container">
+      <h1>Meal-Prep Plan — Woche 1</h1>
+      <div class="sub">~2000 kcal/Tag • 3× vorkochen • 3 Portionen pro Gericht (du + 2× Frau)</div>
+    </div>
+  </header>
 
-<h1>Detaillierter Meal-Prep Plan – 2 Koch-Tage (ganze Eier, 90 % Schoko)</h1>
-<p class="note">Koch-Schritte abhaken – alles wird in Boxen für 6 Tage (+2 Portionen Frau) vorbereitet.</p>
+  <main class="container">
+    <div class="grid">
+      <div class="leftcol">
 
-<!-- ================= SONNTAG ================= -->
-<h2>Sonntag – Koch-Session 1 (90 min, 6 Portionen Mo–Do)</h2>
+        <section class="card">
+          <h2>Kurzübersicht</h2>
+          <p class="small">Ziel: Fett verlieren &amp; Muskeln aufbauen — proteinreich, einfache Rezepte, mobile-friendly.</p>
+          <div class="recipe-meta">
+            <div class="pill">3× Kochen/Woche</div>
+            <div class="pill">Frühstück: Overnight Oats</div>
+            <div class="pill">Flat White täglich</div>
+          </div>
+        </section>
 
-<!-- Reis-Bowl -->
-<div class="card">
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Reis waschen, kochen – 12 min (250 g trocken)</div><div class="alt">→ 1.500 g gekocht, sofort abkühlen (Box offen)</div></div><div class="sets">Schritt 1</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">TK-Brokkoli & Mais auftauen/dünsten – 4 min</div><div class="alt">→ 400 g Brokkoli, 400 g Mais, abschrecken → kalt stoppen</div></div><div class="sets">Schritt 2</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Hähnchen würfeln, marinieren (Öl + Gewürze), anbraten – 12 min</div><div class="alt">→ 300 g nur für diese Woche! Kerntemperatur 75 °C</div></div><div class="sets">Schritt 3</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Kichererbsen abgießen, mit Gemüse in Pfanne, würzen – 3 min</div><div class="alt">→ 1 Dose Kichererbsen, Paprika, Kreuzkümmel, Salz</div></div><div class="sets">Schritt 4</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Boxen füllen → 4 Portionen (2 für dich, 2 für Frau)</div><div class="alt">→ Keine Reserve, alles wird gegessen</div></div><div class="sets">Fertig</div></div>
-</div>
+        <section class="card" style="margin-top:12px">
+          <h2>Meal-Prep Ablauf</h2>
+          <ul>
+            <li><strong>Sonntag:</strong> Overnight Oats + Hähnchen mit Brokkoli &amp; Reis (für Mo/Di)</li>
+            <li><strong>Mittwoch:</strong> Rinder-Linsen-Eintopf (für Do/Fr)</li>
+            <li><strong>Freitag:</strong> Kichererbsen-Bowl (für Sa/So)</li>
+          </ul>
+          <p class="muted">Mittwoch brauchst du kein Mittag — bei der Arbeit.</p>
+        </section>
 
-<!-- One-Pot Beluga -->
-<div class="card">
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Beluga-Linsen waschen, kochen – 15 min (200 g trocken)</div><div class="alt">→ 600 g gekocht, abschrecken → kalt stoppen</div></div><div class="sets">Schritt 1</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Nudeln + Linsen + passierte Tomaten + TK-Gemüse in TOPF – 12 min</div><div class="alt">→ 250 g Nudeln, 400 ml Tomaten, 200 g TK-Gemüse, **kein** extra Wasser (One-Pot)</div></div><div class="sets">Schritt 2</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Eier hartkochen – 10 min (10 ganze Eier)</div><div class="alt">→ Abkühlen, pellen, würfeln</div></div><div class="sets">Schritt 3</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Eier unterheben, Öl + Gewürze – 2 min</div><div class="alt">→ 1 EL Olivenöl, Oregano, Salz, Pfeffer</div></div><div class="sets">Schritt 4</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Abend-Boxen füllen → 6 Portionen (Mo–Do Abend)</div><div class="alt">→ Kühl stellen, fertig!</div></div><div class="sets">Fertig</div></div>
-</div>
+        <section class="card" style="margin-top:12px">
+          <h2>Rezepte &amp; Zubereitung</h2>
 
-<!-- Overnight -->
-<div class="card">
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Over-Night-Gläser füllen (6 Stück)</div><div class="alt">→ 40 g Haferflocken, 25 g Whey, 150 ml Haferdrink, ½ Apfel, **2 g 90 % Schokolade (geraspelt)** → mildere Süße</div></div><div class="sets">Fertig</div></div>
-</div>
+          <details open>
+            <summary>Frühstück — Overnight Oats (3–4 Tage)</summary>
+            <div class="muted">50–60 g Hafer, 200 ml Milch, 150 g Skyr, Chia, Banane/Beeren</div>
+            <ol>
+              <li>Alle Zutaten in einem Glas mischen.</li>
+              <li>Über Nacht (≥6 h) in den Kühlschrank stellen.</li>
+              <li>Morgens umrühren, Nüsse/Beeren drauf.</li>
+            </ol>
+          </details>
 
-<!-- ================= MITTWOCH ================= -->
-<h2>Mittwoch – Koch-Session 2 (25 min, 5 Portionen Fr–So)</h2>
+          <details>
+            <summary>Hähnchen mit Brokkoli &amp; Reis (3 Portionen)</summary>
+            <div class="muted">500 g Hähnchen, 300 g Reis (roh), 500 g Brokkoli</div>
+            <ol>
+              <li>Reis nach Packung kochen.</li>
+              <li>Brokkoli dämpfen oder in Wasser 5–7 min garen.</li>
+              <li>Hähnchen würfeln, mit Sojasoße, Knoblauch &amp; Pfeffer 10 min marinieren.</li>
+              <li>In Pfanne mit 1 EL Öl 8–10 min braten, mit Brokkoli und Reis in Boxen verteilen.</li>
+            </ol>
+            <p class="muted">Haltbarkeit: 3 Tage im Kühlschrank oder einfrieren.</p>
+          </details>
 
-<!-- Ei-Bohnen-Reis -->
-<div class="card">
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Reis waschen, kochen – 12 min (300 g trocken)</div><div class="alt">→ 1.800 g gekocht, abschrecken</div></div><div class="sets">Schritt 1</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Eier hartkochen – 10 min (12 ganze Eier)</div><div class="alt">→ Keine Reste, mehr Protein!</div></div><div class="sets">Schritt 2</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Kichererbsen + TK-Gemüse in Pfanne, anbraten – 5 min</div><div class="alt">→ 1 Dose Kichererbsen, 200 g TK-Erbsen & Karotten</div></div><div class="sets">Schritt 3</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Reis + Eier zugeben, Öl + Sojasauce + Kurkuma – 2 min</div><div class="alt">→ 1 EL Öl, Salz, Pfeffer</div></div><div class="sets">Schritt 4</div></div>
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Boxen füllen → 5 Portionen (Fr–So Abend)</div><div class="alt">→ Kühl stellen, fertig!</div></div><div class="sets">Fertig</div></div>
-</div>
+          <details>
+            <summary>Rinderhack mit Belugalinsen &amp; Paprika (3 Portionen)</summary>
+            <div class="muted">500 g Rinderhack, 200 g Belugalinsen (trocken), 2 Paprika</div>
+            <ol>
+              <li>Linsen 18–22 min in Salzwasser garen, abgießen.</li>
+              <li>Zwiebeln &amp; Paprika anbraten, Rinderhack dazu geben und krümelig braten.</li>
+              <li>Linsen und 1 Dose gehackte Tomaten zugeben, mit Kreuzkümmel, Paprika, Chili abschmecken, 10 min köcheln lassen.</li>
+            </ol>
+            <p class="muted">Tipp: Passt super zu Reis oder Vollkornbrot. Haltbarkeit: 4 Tage oder einfrieren.</p>
+          </details>
 
-<!-- Snack -->
-<div class="card">
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Quark-Becher zubereiten (5 Stück)</div><div class="alt">→ 200 g Magerquark + 30 g Whey + 50 g TK-Beeren + **2 g 90 % Schokolade (geraspelt)**</div></div><div class="sets">Fertig</div></div>
-</div>
+          <details>
+            <summary>Kichererbsen-Bowl mit Gemüse &amp; Joghurt-Dip (3 Portionen)</summary>
+            <div class="muted">400 g Kichererbsen (Dose), 200 g Quinoa/Couscous, Zucchini, Karotte</div>
+            <ol>
+              <li>Quinoa/Couscous kochen.</li>
+              <li>Gemüse würfeln, 8–10 min anbraten, Kichererbsen und Mais dazugeben.</li>
+              <li>Joghurt + Zitronensaft + Knoblauch zu einem Dip verrühren.</li>
+              <li>Bowl zusammenstellen, warm oder kalt essen.</li>
+            </ol>
+          </details>
 
-<!-- Frühstück Reload -->
-<div class="card">
-  <div class="ex-row" onclick="this.classList.toggle('done')"><div><div class="main">Over-Night-Gläser neu aufsetzen (5 Stück)</div><div class="alt">→ wie Sonntag, einfach neu füllen</div></div><div class="sets">Fertig</div></div>
-</div>
+          <details>
+            <summary>Abendessen-Ideen (flexibel)</summary>
+            <ul>
+              <li>Omelette mit Bohnen &amp; Gemüse</li>
+              <li>Vollkornbrot mit Hähnchenaufschnitt &amp; Tomate</li>
+              <li>Proteinshake + Nüsse</li>
+            </ul>
+          </details>
 
-<!-- ================= EINKAUFSLISTE ================= -->
-<h2>Einkaufsliste (6 Tage, +2 Portionen Frau, ganze Eier, 90 % Schoko)</h2>
-<p class="note">Bereiche aufklappen → abhaken. Mengen = Gesamtbedarf.</p>
+        </section>
 
-<!-- Fleisch & Eier -->
-<div class="shop-section">
-  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Fleisch, Fisch, Eier</div>
-  <div class="shop-content">
-    <label class="shop-item"><input type="checkbox"> Hähnchenbrust – 400 g (nur 1× vorkochen)</label>
-    <label class="shop-item"><input type="checkbox"> Seelachs (TK) – 400 g</label>
-    <label class="shop-item"><input type="checkbox"> Eier – 22 Stück (ganz, keine Reste!)</label>
-  </div>
-</div>
+        <section class="card" style="margin-top:12px">
+          <h2>Tipps</h2>
+          <ul>
+            <li>Boxen luftdicht verschließen — heiß nie direkt in den Kühlschrank.</li>
+            <li>Variiere Gewürze, um Geschmack zu verändern (Erdnusssoße, Chili, Zitronensaft).</li>
+            <li>Nutze TK-Gemüse für weniger Vorbereitungsaufwand.</li>
+          </ul>
+        </section>
 
-<!-- Hülsenfrüchte -->
-<div class="shop-section">
-  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Hülsenfrüchte (reduziert)</div>
-  <div class="shop-content">
-    <label class="shop-item"><input type="checkbox"> Kidney-Bohnen – 2 Dosen (à 265 g)</label>
-    <label class="shop-item"><input type="checkbox"> Weiße Bohnen – 2 Dosen (à 265 g)</label>
-    <label class="shop-item"><input type="checkbox"> Beluga-Linsen – 200 g (trocken)</label>
-    <label class="shop-item"><input type="checkbox"> Kichererbsen – 2 Dosen (à 265 g)</label>
-  </div>
-</div>
+      </div>
 
-<!-- Kohlenhydrate -->
-<div class="shop-section">
-  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Kohlenhydrate</div>
-  <div class="shop-content">
-    <label class="shop-item"><input type="checkbox"> Basmati-Reis – 1,1 kg (trocken)</label>
-    <label class="shop-item"><input type="checkbox"> Vollkorn-Penne – 750 g (trocken)</label>
-    <label class="shop-item"><input type="checkbox"> Haferflocken – 400 g</label>
-    <label class="shop-item"><input type="checkbox"> Süßkartoffeln – 300 g</label>
-  </div>
-</div>
+      <aside class="rightcol card">
+        <h2>Einkaufsliste</h2>
+        <p class="small">Hake Artikel ab — dein Status wird im Browser gespeichert.</p>
 
-<!-- Gemüse & Obst -->
-<div class="shop-section">
-  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Gemüse & Obst</div>
-  <div class="shop-content">
-    <label class="shop-item"><input type="checkbox"> TK-Brokkoli – 400 g</label>
-    <label class="shop-item"><input type="checkbox"> TK-Erbsen & Karotten – 400 g</label>
-    <label class="shop-item"><input type="checkbox"> TK-Mais – 400 g</label>
-    <label class="shop-item"><input type="checkbox"> Kirschtomaten – 1,6 kg (2× 800 g Schale)</label>
-    <label class="shop-item"><input type="checkbox"> Äpfel – 3 Stück (für Overnight)</label>
-    <label class="shop-item"><input type="checkbox"> Bananen – 3 Stück (für Overnight + Snack)</label>
-    <label class="shop-item"><input type="checkbox"> TK-Beeren – 300 g (für Quark-Becher)</label>
-  </div>
-</div>
+        <div class="shop-actions">
+          <button class="btn" id="saveBtn">Speichern</button>
+          <button class="btn" id="clearBtn">Alle löschen</button>
+          <button class="ghost" id="exportBtn">Exportieren (CSV)</button>
+        </div>
 
-<!-- Milchprodukte & Protein -->
-<div class="shop-section">
-  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Milchprodukte & Protein</div>
-  <div class="shop-content">
-    <label class="shop-item"><input type="checkbox"> Magerquark (0,2 %) – 1,8 kg (10× 200 g Becher)</label>
-    <label class="shop-item"><input type="checkbox"> Whey Protein – 270 g (≈ 14 Portionen)</label>
-    <label class="shop-item"><input type="checkbox"> Feta light (10 % Fett) – 400 g</label>
-    <label class="shop-item"><input type="checkbox"> Haferdrink (ungesüßt) – 1,5 L</label>
-  </div>
-</div>
+        <div class="shop-list" id="shopList">
+          <!-- generated list -->
+        </div>
 
-<!-- Fette & Sonstiges -->
-<div class="shop-section">
-  <div class="shop-header" onclick="this.nextElementSibling.classList.toggle('show')">Fette & Sonstiges</div>
-  <div class="shop-content">
-    <label class="shop-item"><input type="checkbox"> Rapsöl – 4 EL (≈ 40 ml)</label>
-    <label class="shop-item"><input type="checkbox"> Olivenöl – 3 EL (≈ 30 ml)</label>
-    <label class="shop-item"><input type="checkbox"> 90 % Schokolade – 8 g (geraspelt, für Overnight + Quark)</label>
-    <label class="shop-item"><input type="checkbox"> Gewürze: Paprika, Kreuzkümmel, Oregano, Salz, Pfeffer, Knoblauch, Sojasauce, Kurkuma</label>
-  </div>
+        <hr style="margin:14px 0" />
+        <h3 style="margin:6px 0">Schnellübersicht</h3>
+        <ul style="margin:8px 0;color:var(--muted);font-size:14px">
+          <li>Sonntag: Hähnchen &amp; Oats vorbereiten</li>
+          <li>Mittwoch: Rind-Linsen kochen</li>
+          <li>Freitag: Kichererbsen-Bowl</li>
+        </ul>
+      </aside>
+
+    </div>
+
+    <footer>
+      <div>Viel Erfolg mit deinem Meal-Prep! — (Speichert lokal im Browser, keine Daten werden gesendet.)</div>
+    </footer>
+  </main>
+
+  <script>
+    // Einkaufsliste — Grundlage aus dem Plan
+    const items = [
+      {cat:'Kohlenhydrate & Grund', name:'Haferflocken (500 g)'},
+      {cat:'Kohlenhydrate & Grund', name:'Chiasamen (100 g)'},
+      {cat:'Kohlenhydrate & Grund', name:'Milch oder Hafermilch (2 l)'},
+      {cat:'Kohlenhydrate & Grund', name:'Reis (1 kg)'},
+      {cat:'Kohlenhydrate & Grund', name:'Quinoa/Couscous (500 g)'},
+      {cat:'Kohlenhydrate & Grund', name:'Belugalinsen (200 g)'},
+      {cat:'Kohlenhydrate & Grund', name:'Kichererbsen (2 Dosen)'},
+      {cat:'Kohlenhydrate & Grund', name:'Bohnen (1 Dose)'},
+      {cat:'Proteine', name:'Hähnchenbrust (1 kg)'},
+      {cat:'Proteine', name:'Mageres Rinderhack (500 g)'},
+      {cat:'Proteine', name:'Eier (10 Stk)'},
+      {cat:'Proteine', name:'Skyr / Joghurt (1 kg)'},
+      {cat:'Gemüse & Obst', name:'Brokkoli (1 kg, frisch oder TK)'},
+      {cat:'Gemüse & Obst', name:'Paprika (3 Stk)'},
+      {cat:'Gemüse & Obst', name:'Zucchini (2 Stk)'},
+      {cat:'Gemüse & Obst', name:'Karotten (2 Stk)'},
+      {cat:'Gemüse & Obst', name:'Zwiebeln (4 Stk)'},
+      {cat:'Gemüse & Obst', name:'Knoblauch (1 Knolle)'},
+      {cat:'Konserven', name:'Tomaten (1 Dose gehackt)'},
+      {cat:'Konserven', name:'Mais (1 Dose)'},
+      {cat:'Obst', name:'Banane, Beeren, Äpfel (nach Geschmack)'},
+      {cat:'Obst', name:'Zitronen (1–2 Stk)'},
+      {cat:'Sonstiges', name:'Sojasoße' },
+      {cat:'Sonstiges', name:'Sesamöl / Olivenöl'},
+      {cat:'Sonstiges', name:'Gewürze: Salz, Pfeffer, Paprika, Kreuzkümmel, Chili'},
+      {cat:'Sonstiges', name:'Nüsse (Mandeln/Walnüsse)'},
+      {cat:'Getränke', name:'Kaffee für Flat White'}
+    ];
+
+    const shopListEl = document.getElementById('shopList');
+    const STORAGE_KEY = 'mealprep_shop_v1';
+
+    function renderList(){
+      shopListEl.innerHTML = '';
+      const grouped = items.reduce((acc,it)=>{(acc[it.cat]||(acc[it.cat]=[])).push(it);return acc},{ });
+      for(const cat of Object.keys(grouped)){
+        const h = document.createElement('div');
+        h.style.padding='8px 6px';
+        h.innerHTML = `<strong style="font-size:13px">${cat}</strong>`;
+        shopListEl.appendChild(h);
+        grouped[cat].forEach((it,idx)=>{
+          const row = document.createElement('div'); row.className='shop-item';
+          const id = `item-${cat.replace(/[^a-z0-9]/gi,'')}-${idx}`;
+          const label = document.createElement('label'); label.className='item';
+          label.htmlFor = id;
+          const cb = document.createElement('input'); cb.type='checkbox'; cb.id=id;
+          const span = document.createElement('span'); span.textContent = it.name;
+          label.appendChild(cb); label.appendChild(span);
+          row.appendChild(label);
+          shopListEl.appendChild(row);
+        });
+      }
+      loadState();
+    }
+
+    function saveState(){
+      const boxes = Array.from(shopListEl.querySelectorAll('input[type=checkbox]'));
+      const data = boxes.map(b=>b.checked);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      flash('Gespeichert');
+    }
+    function loadState(){
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const boxes = Array.from(shopListEl.querySelectorAll('input[type=checkbox]'));
+      if(!raw) return;
+      try{
+        const data = JSON.parse(raw);
+        boxes.forEach((b,i)=>{b.checked = !!data[i];});
+      }catch(e){console.warn(e)}
+    }
+
+    function clearAll(){
+      const boxes = shopListEl.querySelectorAll('input[type=checkbox]');
+      boxes.forEach(b=>b.checked=false);
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function exportCSV(){
+      const boxes = Array.from(shopListEl.querySelectorAll('input[type=checkbox]'));
+      const rows = [];
+      let i = 0;
+      for(const cat of Array.from(new Set(items.map(it=>it.cat)))){
+        rows.push([cat,'']);
+        const group = items.filter(it=>it.cat===cat);
+        group.forEach(g=>{
+          rows.push([g.name, boxes[i] && boxes[i].checked ? '✓' : '']);
+          i++;
+        });
+      }
+      const csv = rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+      const blob = new Blob([csv],{type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download='einkaufsliste.csv'; a.click(); URL.revokeObjectURL(url);
+    }
+
+    function flash(msg){
+      const el = document.createElement('div');
+      el.textContent = msg; el.style.position='fixed'; el.style.right='16px'; el.style.bottom='16px'; el.style.background='rgba(11,22,39,.9)'; el.style.color='#fff'; el.style.padding='8px 12px'; el.style.borderRadius='8px'; el.style.zIndex=9999; document.body.appendChild(el);
+      setTimeout(()=>el.style.opacity='0',1100); setTimeout(()=>el.remove(),1500);
+    }
+
+    // attach events
+    document.getElementById('saveBtn').addEventListener('click',saveState);
+    document.getElementById('clearBtn').addEventListener('click',()=>{clearAll(); flash('Alle abgehakt-Status entfernt');});
+    document.getElementById('exportBtn').addEventListener('click',exportCSV);
+
+    renderList();
+
+    // auto-save on checkbox toggle
+    shopListEl.addEventListener('change',()=>{saveState();});
+
+  </script>
 </body>
 </html>
